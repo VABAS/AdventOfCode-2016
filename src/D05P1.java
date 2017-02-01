@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.security.MessageDigest;
 
 class D05P1 {
-    private static String calculatemd5 (String input) {
+    public static String calculatemd5 (String input) {
         MessageDigest md = null;
         try {
             md = MessageDigest.getInstance("MD5");
