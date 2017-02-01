@@ -27,7 +27,7 @@ public class Aoc {
             lines = Files.readAllLines(Paths.get(inputFile), StandardCharsets.UTF_8);
         }
         catch (Exception e) {
-            System.out.println("Exceptin occured.");
+            System.out.println("Exception occured.");
             System.exit(0);
         }
         return lines;
