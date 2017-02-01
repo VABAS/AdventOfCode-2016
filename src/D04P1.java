@@ -22,7 +22,7 @@ class D04P1 {
         }
         return num;
     }
-    protected static int numChars (char c, String word) {
+    public static int numChars (char c, String word) {
         int counter = 0;
         for (char cc : word.toCharArray()) {
             if (cc == c) {
