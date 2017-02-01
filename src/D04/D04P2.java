@@ -4,6 +4,10 @@ import java.util.Arrays;
 
 class D04P2 extends D04P1 {
     private static String decrypt (String cipher, int key) {
+        char[] alphapets = 'abcdefghijklmnopqrstuwxyz';
+        while (key >= alphapets.size()) {
+            key -= alpapets.size();
+        }
         String clearText = "";
         for (char c : cipher.toCharArray()) {
             if (c == '-') {
