@@ -21,6 +21,23 @@ class D06P1 {
         }
         return mostCommon;
     }
+
+    public static List<String> columnsToRows(List<String> rows) {
+        List<String> columns = new ArrayList<String>();
+        for (int i = 0; i < rows.size(); i++) {
+            String currentLine = rows.get(i);
+            for (int j = 0; j < currentLine.length(); j++) {
+                if (i == 0) {
+                    columns.add(Character.toString(currentLine.charAt(j)));
+                }
+                else {
+                    columns.set(j, columns.get(j) + currentLine.charAt(j));
+                }
+            }
+        }
+        return columns;
+    }
+
     public static void main (String[] args) {
         List<String> lines = new ArrayList<String>();
         lines = Aoc.startUp(args);
@@ -29,21 +46,12 @@ class D06P1 {
 
         // Rotating columns to represent rows in our char array for easier
         // processing.
-        for (int i = 0; i < lines.size(); i++) {
-            String currentLine = lines.get(i);
-            for (int j = 0; j < currentLine.length(); j++) {
-                if (i == 0) {
-                    characters.add(Character.toString(currentLine.charAt(j)));
-                }
-                else {
-                    characters.set(j, characters.get(j) + currentLine.charAt(j));
-                }
-            }
-        }
+        characters = columnsToRows(lines);
 
         // Printing most common character for each column.
         for (String c : characters) {
             System.out.print(getMostCommon(c));
         }
+        System.out.println();
     }
 }
